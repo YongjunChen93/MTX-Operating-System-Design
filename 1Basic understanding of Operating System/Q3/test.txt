@@ -1,0 +1,230 @@
+enter main
+====argc, argv, env===
+&argc=bfc831f0
+argv[0] = a.out address = bfc83284
+argv[1] = one address = bfc83288
+argv[2] = two address = bfc8328c
+argv[3] = three address = bfc83290
+env[0] address = bfc83284
+env[1] address = bfc83288
+env[2] address = bfc8328c
+env[3] address = bfc83290
+env[4] address = bfc83294
+env[5] address = bfc83298
+env[6] address = bfc8329c
+env[7] address = bfc832a0
+env[8] address = bfc832a4
+env[9] address = bfc832a8
+env[a] address = bfc832ac
+env[b] address = bfc832b0
+env[c] address = bfc832b4
+env[d] address = bfc832b8
+env[e] address = bfc832bc
+env[f] address = bfc832c0
+env[10] address = bfc832c4
+env[11] address = bfc832c8
+env[12] address = bfc832cc
+env[13] address = bfc832d0
+env[14] address = bfc832d4
+env[15] address = bfc832d8
+env[16] address = bfc832dc
+env[17] address = bfc832e0
+env[18] address = bfc832e4
+env[19] address = bfc832e8
+env[1a] address = bfc832ec
+env[1b] address = bfc832f0
+env[1c] address = bfc832f4
+env[1d] address = bfc832f8
+env[1e] address = bfc832fc
+env[1f] address = bfc83300
+env[20] address = bfc83304
+env[21] address = bfc83308
+env[22] address = bfc8330c
+env[23] address = bfc83310
+env[24] address = bfc83314
+env[25] address = bfc83318
+env[26] address = bfc8331c
+env[27] address = bfc83320
+env[28] address = bfc83324
+env[29] address = bfc83328
+env[2a] address = bfc8332c
+env[2b] address = bfc83330
+env[2c] address = bfc83334
+env[2d] address = bfc83338
+env[2e] address = bfc8333c
+env[2f] address = bfc83340
+env[30] address = bfc83344
+env[31] address = bfc83348
+env[32] address = bfc8334c
+env[33] address = bfc83350
+env[34] address = bfc83354
+env[35] address = bfc83358
+env[36] address = bfc8335c
+env[37] address = bfc83360
+env[38] address = bfc83364
+env[39] address = bfc83368
+env[3a] address = bfc8336c
+env[3b] address = bfc83370
+env[3c] address = bfc83374
+env[3d] address = bfc83378
+env[3e] address = bfc8337c
+env[3f] address = bfc83380
+enter A
+&d=bfc83180 &e=bfc83184 &f=bfc83188
+enter B
+FP = bfc83168 p =bfc83148
+BFC83168->BFC83198->BFC831D8->NULL
+bfc83148	bfc83148
+bfc8314c	       1
+bfc83150	       7
+bfc83154	       8
+bfc83158	       9
+bfc8315c	3f23f200
+bfc83160	b7736000
+bfc83164	b7736000
+bfc83168	bfc83198
+bfc8316c	 8048635
+bfc83170	       4
+bfc83174	       5
+bfc83178	bfc83184
+bfc8317c	bfc83188
+bfc83180	       4
+bfc83184	       5
+bfc83188	       6
+bfc8318c	3f23f200
+bfc83190	bfc831f0
+bfc83194	b777a918
+bfc83198	bfc831d8
+bfc8319c	 8048753
+bfc831a0	       1
+bfc831a4	       2
+bfc831a8	bfc83380
+bfc831ac	bfc83290
+bfc831b0	       4
+bfc831b4	       0
+bfc831b8	b75b2a50
+bfc831bc	       4
+bfc831c0	      40
+bfc831c4	       1
+bfc831c8	       2
+bfc831cc	       3
+bfc831d0	bfc831f0
+bfc831d4	       0
+bfc831d8	       0
+bfc831dc	b759c637
+bfc831e0	b7736000
+bfc831e4	b7736000
+bfc831e8	       0
+bfc831ec	b759c637
+bfc831f0	       4
+bfc831f4	bfc83284
+bfc831f8	bfc83298
+bfc831fc	       0
+bfc83200	       0
+bfc83204	       0
+bfc83208	b7736000
+bfc8320c	b777ac04
+bfc83210	b777a000
+bfc83214	       0
+bfc83218	b7736000
+bfc8321c	b7736000
+bfc83220	       0
+bfc83224	93fa7e45
+bfc83228	b0127054
+bfc8322c	       0
+bfc83230	       0
+bfc83234	       0
+bfc83238	       4
+bfc8323c	 80483d0
+bfc83240	       0
+bfc83244	b776b030
+bfc83248	b77658a0
+bfc8324c	b777a000
+bfc83250	       4
+bfc83254	 80483d0
+bfc83258	       0
+bfc8325c	 80483f1
+bfc83260	 804865c
+bfc83264	       4
+bfc83268	bfc83284
+bfc8326c	 8048780
+bfc83270	 80487e0
+bfc83274	b77658a0
+bfc83278	bfc8327c
+bfc8327c	b777a918
+bfc83280	       4
+bfc83284	bfc84299
+bfc83288	bfc8429f
+bfc8328c	bfc842a3
+bfc83290	bfc842a7
+bfc83294	       0
+bfc83298	bfc842ad
+bfc8329c	bfc842b8
+bfc832a0	bfc842ca
+bfc832a4	bfc842e0
+bfc832a8	bfc84310
+bfc832ac	bfc8431f
+bfc832b0	bfc84350
+bfc832b4	bfc84360
+bfc832b8	bfc84374
+bfc832bc	bfc84385
+bfc832c0	bfc843a8
+bfc832c4	bfc843ba
+bfc832c8	bfc843f4
+bfc832cc	bfc84438
+bfc832d0	bfc8444f
+bfc832d4	bfc8447c
+bfc832d8	bfc84486
+bfc832dc	bfc84a0e
+bfc832e0	bfc84a21
+bfc832e4	bfc84a5b
+bfc832e8	bfc84a8f
+bfc832ec	bfc84ab8
+bfc832f0	bfc84aeb
+bfc832f4	bfc84b2f
+bfc832f8	bfc84bbf
+bfc832fc	bfc84bd6
+bfc83300	bfc84be8
+bfc83304	bfc84c09
+bfc83308	bfc84c1e
+bfc8330c	bfc84c58
+bfc83310	bfc84c72
+bfc83314	bfc84c86
+bfc83318	bfc84c99
+bfc8331c	bfc84caa
+bfc83320	bfc84cb9
+bfc83324	bfc84cef
+bfc83328	bfc84d01
+bfc8332c	bfc84d25
+bfc83330	bfc84d37
+bfc83334	bfc84d51
+bfc83338	bfc84d70
+bfc8333c	bfc84d80
+bfc83340	bfc84d8f
+bfc83344	bfc84d97
+bfc83348	bfc84da6
+bfc8334c	bfc84dbe
+bfc83350	bfc84dea
+bfc83354	bfc84dfc
+bfc83358	bfc84e1c
+bfc8335c	bfc84e37
+bfc83360	bfc84e44
+bfc83364	bfc84e5e
+bfc83368	bfc84e70
+bfc8336c	bfc84ed6
+bfc83370	bfc84f12
+bfc83374	bfc84f32
+bfc83378	bfc84f3c
+bfc8337c	bfc84f4f
+bfc83380	bfc84f6e
+bfc83384	bfc84f79
+bfc83388	bfc84f93
+bfc8338c	bfc84fa6
+bfc83390	bfc84fc8
+bfc83394	bfc84fea
+bfc83398	       0
+bfc8339c	      20
+---------------------------------------------
+exit B
+exit A
+exit main
