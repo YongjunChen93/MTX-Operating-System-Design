@@ -7,7 +7,8 @@
 3. Partition table, fdisk, structures in C, read special files
 4. Simulate Unix File System Tree
 5. Sh Simulator
-6. File_Operation_Cross_Networks
+6. File Operation Cross Networks
+7. File System design
 TO BE DONE
 ```
 
