@@ -18,6 +18,7 @@ int my_mount(char *filesys, char *mount_point){
 	char buf[BLKSIZE];
 	SUPER *sp;
     GD *gp;	
+    //(1)
 	if(strlen(filesys) == 0 && strlen(mount_point) == 0){
 		display_mount(rootfilesys);
 		return 0;
@@ -26,6 +27,7 @@ int my_mount(char *filesys, char *mount_point){
 		printf("In mount, filesys = %s, mount_point = %s are not complete\n",filesys,mount_point);
 		return -1;
 	}
+	//(2)
 	for(i=0;i<NMOUNT;i++){
 		if(strcmp(mounttab[i].name,filesys)==0){
 			printf("In mount, %s already mounted\n",filesys);
@@ -57,17 +59,20 @@ int my_mount(char *filesys, char *mount_point){
 	else{
 		dev = running->cwd->dev;
 	}
+	//(4)
 	dir_ino = getino(&dev,mount_point);
 	if(dir_ino==0){
 		printf("In mount, mount_point = %s doesn't exist\n",mount_point);
 		return -1;
 	}
 	pdir_mip = iget(dev,dir_ino);
+	//(5)check is a DIR
 	if(!S_ISDIR(pdir_mip->INODE.i_mode)){
 		printf("In mount, mount_point = %s is not a dir\n",mount_point);
 		iput(pdir_mip);
 		return -1;
 	}
+	//(5) check is not busy
 	for(i=0;i<NPROC;i++){
 		if(proc[i].cwd == pdir_mip){
 			printf("In mount, mount_point = %s is busy \n",mount_point);
@@ -75,7 +80,7 @@ int my_mount(char *filesys, char *mount_point){
 			return -1;
 		}
 	}	
-	
+	//(6) - (7)
 	pdir_mip->mptr = pmount;
 	pmount->dev = new_dv;
 	pmount->ninodes = sp->s_inodes_count;
@@ -89,6 +94,7 @@ int my_mount(char *filesys, char *mount_point){
 	strcpy(pmount->mount_name, mount_point);
 	strcpy(pmount->name,filesys);
 	pdir_mip->mounted = 1;
+	printf("mount %s succeed\n", filesys);
     return 0;	
 }
 
@@ -97,6 +103,7 @@ int my_umount(char *filesys){
     int i;
 	MOUNT *pmount = NULL;
 	MINODE *pdir_mip;
+	//(1)
 	for(i=0;i<NMOUNT;i++){
 		if(strcmp(mounttab[i].name,filesys)==0){
 			pmount = &mounttab[i];
@@ -107,6 +114,7 @@ int my_umount(char *filesys){
 		printf("In umount, %s is not mounted\n",filesys);
 		return -1;
 	}
+	//(2) check any file in dev is active or not
 	for(i=0;i<NMINODE;i++){
 		if(minode[i].refCount!=0){
 			if(minode[i].dev == pmount->dev){
@@ -115,12 +123,15 @@ int my_umount(char *filesys){
 			}
 		}
 	}
+	//(3)
 	display_mount(pmount);
 	pmount->name[0] = 0;
 	pmount->dev = 0;
 	pdir_mip = pmount->mounted_inode;
 	pdir_mip->mounted = 0;
 	iput(pdir_mip);	
+	printf("umount %s filesys succeed!\n", filesys);
+	//(4)
 	return 0;
 }
 

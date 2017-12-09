@@ -9,7 +9,23 @@
 5. Sh Simulator
 6. File Operation Cross Networks
 7. File System design
-TO BE DONE
+```
+
+## 7.File System
+```
+Designed a file system includes following commands:
+              -------  LEVEL 1 ------------ 
+               mount_root;
+               mkdir, rmdir, ls, cd, pwd;
+               creat, link,  unlink, symlink
+               stat,  chmod, touch;
+              -------  LEVEl 2 -------------
+               open,  close,  read,  write
+               lseek  cat,    cp,    mv
+              -------  LEVEl 3 ------------ 
+               mount, umount
+              -----------------------------
+All the commands works exactly the same way as they do in Unix/Linux.
 ```
 
 ## Acknowledge

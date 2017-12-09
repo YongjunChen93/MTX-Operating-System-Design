@@ -18,9 +18,16 @@ PROC   proc[NPROC], *running;
 MOUNT mounttab[NMOUNT];
 OFT oft[NOFT];
 
+
 char names[64][128], *name[64];
 int fd, dev, n;
 int nblocks, ninodes, bmap, imap, inode_start;
 char line[256], cmd[32], pathname[256], parameter[256];
-char *CMD[] = {"ls","cd","pwd","mkdir","creat","rmdir","quit"};
+char *CMD[] = {"ls","cd","pwd","mkdir","creat","rmdir",
+				"link","unlink","symlink","readlink",
+				"chmod","touch","quit","open","close",
+				"lseek", "read", "write", "cat", "cp","mv",
+				"mount","umount"};
+char read_buff[BLOCK_SIZE];
+
 #endif

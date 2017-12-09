@@ -1,12 +1,11 @@
 #ifndef ALLOCATE_DEALLOCATE_H
 #define ALLOCATE_DEALLOCATE_H
-
 #include "util.c"
+
 
 int tst_bit(char *buf, int bit)
 {
   int i, j;
-
   i = bit / 8;
   j = bit % 8;
   if (buf[i] & (1 << j)){
@@ -14,6 +13,7 @@ int tst_bit(char *buf, int bit)
   }
   return 0;
 }
+
 
 int clr_bit(char *buf, int bit)
 {
@@ -72,7 +72,6 @@ int incFreeBlocks(int dev)
   sp = (SUPER *)buf;
   sp->s_free_blocks_count++;
   put_block(dev, 1, buf);
-
   get_block(dev, 2, buf);
   gp = (GD *)buf;
   gp->bg_free_blocks_count++;

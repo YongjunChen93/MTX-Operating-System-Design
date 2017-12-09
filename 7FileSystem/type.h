@@ -88,12 +88,12 @@ typedef struct proc{
 
 // Mount Table structure
 typedef struct mount{
-        int    dev;
-        int    nblocks,ninodes;
-        int    bmap, imap, iblk;
-        MINODE *mounted_inode;
-        char   name[64]; 
-        char   mount_name[64];
+  int    dev;
+  int    nblocks,ninodes;
+  int    bmap, imap, iblk;
+  MINODE *mounted_inode;
+  char   name[64]; 
+  char   mount_name[64];
 }MOUNT;
 
 #endif

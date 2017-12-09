@@ -6,12 +6,23 @@
 #include <libgen.h>
 #include <sys/stat.h>
 
+//LEVEL 1
 #include "type.h"
 #include "global.c"
 #include "util.c"
 #include "cd_ls_pwd_quit.c"
-#include "mount_umount.c"
 #include "mkdir_creat_rmdir.c"
+#include "link_unlink.c"
+#include "symlink_readlink.c"
+#include "chmod_touch.c"
+
+//LEVEL 2
+#include "open_close_lseek.c"
+#include "read_write.c"
+#include "cat_cp_mv.c"
+
+//LEVEL 3
+#include "mount_umount.c"
 
 char *disk = "mydisk";
 
@@ -59,6 +70,18 @@ int mount_root(){
 	printf("mount root done!\n");
 }
 
+void menu(){
+	printf("-------          LEVEL 1          ----------\n");
+	printf("| mkdir | rmdir |    ls   |     cd    | pwd  | chmod |\n");
+	printf("| creat | link  |  unlink |  symlink  | stat | touch |\n");
+	printf("-------          LEVEL 2          ----------\n");
+	printf("| open[file mode]  | close [fd] | read[fd bytes]  | write[fd strings]|\n");
+	printf("| lseek[fd offset] | cat [file] | cp[file1 file2] | mv [file dest]   |\n");
+	printf("-------          LEVEL 3          ----------\n");
+	printf("| mount [disk loc] | umount [disk] | \n");
+	printf("command:");
+}
+
 void main(int argc, char *argv[]){
 	int ino, ret;
 	if (argc>1) disk = argv[1];
@@ -88,9 +111,12 @@ void main(int argc, char *argv[]){
 	init();
 	mount_root();
 	/* exe command*/
-	int (*fptr[])(char*) = {(int (*)())my_ls, my_cd, my_pwd, my_mkdir, my_creat, my_rmdir, quit};
+	int (*fptr[])(char*) = {(int (*)())my_ls, my_cd, my_pwd, my_mkdir, my_creat, my_rmdir};
+	int (*f2ptr[])(char*, char*)={(int (*)())my_link, my_unlink, my_symlink, my_readlink,
+										 my_chmod, my_touch, quit,my_open};
+
 	while(1){
-		printf("input command :[ls|cd|pwd|mkdir|creat|rmdir|quit]: ");
+		menu();
 		fgets(line, 128, stdin);
 		line[strlen(line)-1] = 0;
 		if(line[0]==0) continue;
@@ -102,11 +128,50 @@ void main(int argc, char *argv[]){
 		if(index == -1){
 			printf("invalid command\n");
 		}
-		else if(index >= 0 && index <= 6){
+		else if(index >= 0 && index <= 5){
 			fptr[index](pathname);
 		}
+		else if(index > 5 && index <= 8 || index >9 && index<=11){
+			f2ptr[index-6](pathname,parameter);
+		}
+		else if(index == 9){
+			f2ptr[index-6](pathname,buf);
+		}
+		else if(index == 12){
+			quit();
+		}
+		else if(index == 13){
+			f2ptr[index-6](pathname,atoi(parameter));
+		}
+		else if(index == 14){
+			my_close(atoi(pathname));
+		}
+		else if(index == 15){
+			mylseek(atoi(pathname),atoi(parameter));
+		}
+		else if(index == 16){
+			my_read(atoi(pathname), atoi(parameter));
+		}
+		else if(index == 17){
+			my_write(atoi(pathname),parameter);
+		}
+		else if(index == 18){
+			my_cat(pathname);
+		}
+		else if(index == 19){
+			my_cp(pathname, parameter);
+		}
+		else if(index == 20){
+			my_mv(pathname, parameter);
+		}
+		else if(index == 21){
+			my_mount(pathname, parameter);
+		}
+		else if(index == 22){
+			my_umount(pathname);
+		}
 		else{
-			printf("TODO list");
+			printf("Invalid command");
 			return;
 		}
 	}

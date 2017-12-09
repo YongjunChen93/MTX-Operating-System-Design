@@ -112,14 +112,12 @@ MINODE* iget(int dev,int ino)
 		if(minode[i].refCount==0)
 		{
 			MINODE *mip = &minode[i];
-			
 			//Mailman's algorithm
 			int blk = (ino-1)/8 + inode_start;
 			int offset = (ino-1)%8;
 			
 			get_block(dev,blk,buf);
 			INODE *ip = (INODE *)buf+offset;
-			
 			mip->INODE = *ip;
 			mip->dev = dev;
 			mip->ino = ino;
@@ -206,6 +204,7 @@ int search(MINODE *mip, char *name)
           return 0;
 
         //get ip->i_block[i] into sbuf[ ];
+      	//READ contents of directory entires
 	    get_block(mip->dev, ip->i_block[i], sbuf);
         dp = (DIR *)sbuf;
         cp = sbuf;

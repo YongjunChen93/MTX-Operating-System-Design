@@ -86,7 +86,6 @@ int my_ls(char *pathname){
 	else{
 		printfile(&(mip->INODE),basename(pathname));
 	}
-		
 	if(strlen(pathname)>0){
 		iput(mip);
 	}
