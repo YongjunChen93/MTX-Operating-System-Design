@@ -1,4 +1,4 @@
-# Design and Implement MTX Operating System
+# Design and Implement MTX File System
 # - Contents
 
 ```
@@ -29,7 +29,7 @@ All the commands works exactly the same way as they do in Unix/Linux.
 ```
 
 ## Acknowledge
-The works are done based on the Linux system and C programming language. The whole works design and simulate a complete advanced operating systems. Here I want specifically thanks for professor KC Wang's teaching.
+The works are done based on the Linux system and C programming language. The whole work designs and simulates a complete file system. I want to specially thank Professor KC Wang for his teaching.
 
 
 ```
